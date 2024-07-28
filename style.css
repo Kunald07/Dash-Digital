@@ -1,0 +1,653 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #2a2a2a;
+  }
+  
+  body,
+  html {
+    width: 100%;
+    height: 100%;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+  }
+  
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  
+  *::selection {
+    background-color: #fff;
+    color: #2a2a2a;
+  }
+  
+  .main {
+    position: relative;
+    width: 100%;
+    background-color: #f0f0f0;
+    font-family: gilroy;
+    overflow: hidden;
+  }
+  
+  .loder {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-color: #bcbcb4;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5vw;
+  }
+  
+  .loder > h3 {
+    font-weight: 500;
+    font-size: 0.8vw;
+  }
+  
+  .outer-line {
+    width: 4vw;
+    height: 1px;
+    background-color: #969595;
+  }
+  
+  .inner-line {
+    width: 0%;
+    height: 100%;
+    background-color: #2a2a2a;
+  }
+  
+  .percent {
+    font-weight: 500;
+  }
+  
+  .page1 {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+  }
+  
+  nav {
+    padding: 0 2vw;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    background-color: #f0f0f0;
+    z-index: 9;
+    overflow: hidden;
+  }
+  
+  nav h3,
+  nav h2 {
+    font-weight: 500;
+    font-size: 0.8vw;
+  }
+  
+  .nav-right {
+    display: flex;
+    gap: 5vw;
+  }
+  
+  .menu {
+    /* display: none; */
+    position: absolute;
+    right: 2%;
+    opacity: 0;
+    font-size: 0.9vw;
+  }
+  
+  .page1-text {
+    margin-top: 6vw;
+    position: relative;
+    padding: 0 2vw;
+  }
+  
+  .page1-text > h1 {
+    font-size: 6vw;
+    font-weight: 500;
+    line-height: 0.9;
+    width: 80%;
+  }
+  
+  .page1-text > h6 {
+    font-weight: 500;
+    width: 10%;
+    margin-top: 1vw;
+  }
+  
+  .page1-box {
+    position: relative;
+    height: 70vh;
+    width: 100%;
+    margin-top: 4vw;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .page1-elem {
+    position: relative;
+    height: 100%;
+    width: 23%;
+  }
+  
+  .cursor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.3vw;
+    background-color: #2a2a2a;
+    z-index: 9;
+    /* transition: all ease 0.3s; */
+    opacity: 0;
+  }
+  
+  .cursor h3 {
+    color: #fff;
+    font-size: 0.6vw;
+    font-weight: 500;
+  }
+  
+  .page1-elem-img {
+    position: relative;
+    height: 85%;
+    width: 100%;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+    overflow: hidden;
+  }
+  
+  .page1-elem-img > img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .page1-elem:hover .page1-elem-img {
+    border-radius: 50%;
+  }
+  
+  .line {
+    width: 100%;
+    height: 0.9px;
+    background-color: black;
+    margin-top: 1vw;
+  }
+  
+  .elem-dets {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .elem-dets > h6 {
+    font-weight: 500;
+    margin-top: 0.5vw;
+  }
+  
+  .page1-elem > h3 {
+    font-weight: 500;
+    font-size: 1.2vw;
+    margin-top: 0.5vw;
+  }
+  
+  .page2 {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    display: flex;
+  }
+  
+  .page2-left {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    padding-left: 2vw;
+    display: flex;
+    align-items: center;
+  }
+  
+  .page2-left-text > h1 {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 4vw;
+  }
+  
+  .page2-left-text > h3 {
+    font-weight: 500;
+    width: 50%;
+    line-height: 1;
+    font-size: 1.3vw;
+    margin-top: 1vw;
+  }
+  
+  .page2-right {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: end;
+  }
+  
+  .page2-right-text p {
+    font-size: 0.9vw;
+    line-height: 1.3;
+    width: 70%;
+  }
+  
+  .page2-right-text button {
+    border: none;
+    background-color: #2a2a2a;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 0.2vw 0.5vw;
+    border-radius: 3vw;
+    font-size: 0.6vw;
+    margin-top: 1.5vw;
+  }
+  
+  .page3 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin-top: 4vw;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .page3 > video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .page4 {
+    position: relative;
+    height: 70vh;
+    width: 100%;
+    padding: 0 2vw;
+    padding-top: 4vw;
+  }
+  
+  .page4 > h1 {
+    font-weight: 600;
+    font-size: 4vw;
+  }
+  
+  .page4-info-box {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    padding-top: 4vw;
+  }
+  
+  .car-info {
+    height: 100%;
+    width: calc((100% / 4) - 0.5vw);
+  }
+  
+  .car-info > p {
+    font-size: 1vw;
+    line-height: 1.2;
+    opacity: 0.8;
+    margin-top: 1vw;
+  }
+  
+  .page4-btn {
+    position: relative;
+    margin-top: 4vw;
+    display: flex;
+    align-items: center;
+  }
+  
+  .page4-btn > button {
+    position: absolute;
+    border: none;
+    padding: 0.2vw 0.5vw;
+    background-color: #2a2a2a;
+    color: #fff;
+    font-weight: 400;
+    font-size: 0.7vw;
+    text-transform: uppercase;
+    border-radius: 2vw;
+    width: 8vw;
+    transition: all ease 0.2s;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .page4-btn > button:nth-child(1) {
+    background-color: #ccc4b9;
+    color: #2a2a2a;
+    width: 0%;
+    padding: 0.2vw 0.5vw;
+    padding-left: 1.4vw;
+    opacity: 0;
+  }
+  
+  .page5 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #2a2a2a;
+  }
+  
+  .page5 > h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4vw;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    line-height: 1;
+  }
+  
+  .page5 > h3 > span {
+    color: rgb(225, 67, 67);
+  }
+  
+  .page5-top {
+    width: 100%;
+    height: 50%;
+    position: relative;
+    overflow: hidden;
+    background-color: #f0f0f0;
+  }
+  
+  .page5-top > h1 {
+    font-size: 12vw;
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    color: #000;
+  }
+  
+  .page5-bottom {
+    position: relative;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    background-color: #f0f0f0;
+  }
+  
+  .page5-bottom > h1 {
+    font-size: 12vw;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000;
+  }
+  
+  .page6 {
+    position: relative;
+    height: 40vh;
+    width: 100%;
+    margin-top: 6vw;
+  }
+  
+  .swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  
+  .swiper-slide {
+    width: 400px;
+    height: 400px;
+  }
+  
+  .swiper-slide img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  .page7 {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    padding: 2vw;
+  }
+  
+  .page7 > h6 {
+    margin-top: 8vw;
+    font-weight: 500;
+  }
+  
+  .page7 > h1 {
+    font-size: 6vw;
+    font-weight: 400;
+  }
+  
+  footer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .footer-left {
+    position: relative;
+    width: 50%;
+    height: 50%;
+  }
+  
+  .footer-left > h3 {
+    font-weight: 500;
+    width: 50%;
+    line-height: 1;
+  }
+  
+  .footer-right {
+    position: relative;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .footer-right-elem {
+    width: 50%;
+  }
+  
+  .footer-right-elem > h6 {
+    font-weight: 500;
+    margin-bottom: 0.5vw;
+    opacity: 0.7;
+  }
+  
+  .footer-right-elem > h5 {
+    font-weight: 400;
+  }
+  
+  @media (max-width: 600px) {
+    nav h3 {
+      font-size: 2vw;
+    }
+  
+    .nav-right > h3 {
+      display: none;
+    }
+  
+    .menu {
+      opacity: 1;
+      font-size: 2vw;
+    }
+  
+    .page1-text {
+      margin-top: 12vw;
+    }
+  
+    .page1-text > h1 {
+      font-size: 5vw;
+      width: 100%;
+      text-align: center;
+    }
+  
+    .page1-text > h6 {
+      width: 100%;
+      font-size: 2vw;
+      text-align: center;
+    }
+  
+    .page1-box {
+      align-items: center;
+      flex-wrap: wrap;
+      height: 100%;
+    }
+  
+    .page1-elem {
+      margin-top: 4vw;
+      width: 40%;
+    }
+  
+    .page2 {
+      height: 25vh;
+      flex-direction: column;
+      margin-top: 6vw;
+    }
+  
+    .page2-left {
+      width: 100%;
+      height: 50%;
+      justify-content: center;
+    }
+  
+    .page2-left-text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .page2-left-text > h1 {
+      font-size: 5vw;
+    }
+  
+    .page2-left-text > h3 {
+      width: 80%;
+      line-height: 1.5;
+      font-size: 1.8vw;
+      text-align: center;
+    }
+  
+    .page2-right {
+      width: 100%;
+      height: 50%;
+      justify-content: center;
+    }
+  
+    .page2-right-text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .page2-right-text p {
+      font-size: 1.5vw;
+      width: 85%;
+      text-align: center;
+    }
+  
+    .page2-right-text button {
+      padding: 0.5vw 1.5vw;
+      font-size: 1.5vw;
+    }
+  
+    .page4-info-box {
+      flex-wrap: wrap;
+    }
+  
+    .car-info {
+      height: 50%;
+      width: calc((100% / 2) - 2vw);
+    }
+  
+    .car-info > p {
+      font-size: 1.8vw;
+    }
+  
+    .page4-btn > button {
+      padding: 0.5vw 1.5vw;
+      font-size: 1.5vw;
+      width: 17vw;
+    }
+  
+    .page5 > h3 {
+      font-size: 8vw;
+      width: 100%;
+    }
+  
+    .page5-top > h1 {
+      font-size: 16vw;
+    }
+  
+    .page5-bottom > h1 {
+      font-size: 16vw;
+    }
+  
+    .page6 {
+      height: 50vh;
+    }
+  
+    .swiper-slide {
+      width: 300px;
+      height: 300px;
+    }
+  
+    .page7 > h6 {
+      font-size: 4vw;
+    }
+  
+    .page7 > h1 {
+      font-size: 10vw;
+    }
+  
+    footer {
+      flex-direction: column;
+    }
+  
+    .footer-left {
+      width: 100%;
+      height: 25%;
+      margin-top: 6vw;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+  
+    .footer-left > h3 {
+      width: 90%;
+      line-height: 1.3;
+      text-align: center;
+    }
+  
+    .page4-btn {
+      margin-right: 18vw;
+    }
+  
+    .footer-right {
+      width: 80%;
+    }
+  
+    .footer-right-elem {
+      width: 35%;
+    }
+  }
+  
